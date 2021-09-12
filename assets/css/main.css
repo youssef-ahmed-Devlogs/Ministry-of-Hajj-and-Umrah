@@ -1,0 +1,252 @@
+:root {
+    /* COLORS */
+    --main-color: #d8a53f;
+    --green: #4b7772;
+    --white: #fff;
+    --light: #edeaea;
+    --dark: #373432;
+    --dark-light: #4d4d4d;
+}
+
+* {
+    font-family: 'Cairo', sans-serif;
+}
+
+body {
+    height: 5000px;
+}
+
+/* =====================  HEADER  =====================*/
+.header__logo {
+    width: 300px;
+}
+
+.bottom__header {
+    background-color: var(--main-color) !important;
+    padding: 15px;
+
+}
+
+.bottom__header a {
+    color: var(--white) !important;
+    padding: 15px;
+    display: block;
+    text-align: center;
+    transition: .3s ease-in-out;
+    font-weight: bold;
+}
+
+.bottom__header a:hover,
+.bottom__header a.active {
+    background-color: var(--dark);
+}
+
+@media (min-width: 992px) {
+
+    .bottom__header {
+        padding: 0;
+    }
+
+    .bottom__header .navbar-collapse {
+        display: block !important;
+    }
+}
+
+@media (max-width: 992px) {
+    .bottom__header .navbar-collapse {
+        margin-top: 30px;
+    }
+}
+
+/* =====================  SLIDER  ===================== */
+.carousel-inner {
+    max-height: 500px;
+}
+
+.carousel-inner .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0, 0.4);
+}
+
+.carousel-inner .slider-text {
+    position: absolute;
+    top: 250px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    color: var(--white);
+}
+
+.carousel-inner .slider-text::after {
+    content: "";
+    position: absolute;
+    right: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 100%;
+    background-color: var(--white);
+}
+
+@media (max-width: 991px) {
+    .carousel-inner .slider-text {
+        top: 200px;
+        font-size: 14px;
+    }
+
+    .carousel-inner .slider-text::after {
+        width: 3px;
+    }
+}
+
+@media (max-width: 600px) {
+    .carousel-inner .slider-text {
+        top: 150px;
+        font-size: 12px;
+    }
+
+    .carousel-inner .slider-text::after {
+        width: 2px;
+    }
+}
+
+@media (max-width: 600px) {
+    .carousel-inner .slider-text {
+        top: 100px;
+    }
+}
+
+@media (max-width: 320px) {
+    .carousel-inner .slider-text {
+        top: 70px;
+        font-size: 10px;
+    }
+}
+
+/* =====================  SUMMARY  ===================== */
+.summary {
+    background-color: var(--light)
+}
+
+.summary__icon {
+    max-width: 120px;
+    margin: 0 auto;
+}
+
+/* =====================  ELECTRONIC SERVICES  ===================== */
+.select-services {
+    background-color: var(--green);
+    padding: 20px;
+    height: 400px;
+}
+
+.select-services select {
+    width: 100%;
+    appearance: none;
+    padding: 10px;
+    outline: none;
+    border: none;
+}
+
+.select-services select::-ms-expand {
+    display: none;
+}
+
+.select-services-item {
+    position: relative;
+}
+
+.select-services-item img {
+    width: 42px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.electronic__services-slider {
+    width: 100%;
+    height: 400px;
+}
+
+.swiper-slide {
+    border: 1px solid rgba(0,0,0, 0.2);
+    border-radius: 5px;
+    padding: 20px 15px 10px;
+}
+
+.swiper-button-next:after, .swiper-button-prev:after {
+    font-size: initial;
+    color: var(--dark);
+    font-weight: bold;
+}
+
+.electronic__services-icon {
+    max-width: 150px;
+    margin: 0 auto;
+}
+
+.electronic__services-desc {
+    margin-top: 70px;
+}
+
+.electronic__services-desc h4 {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--dark-light);
+}
+
+.electronic__services-desc p {
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    color: var(--dark-light);
+
+}
+
+@media (max-width: 500px) {
+    .swiper-button-next:after, .swiper-button-prev:after,
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none;
+    }
+}
+
+/* =====================  APPS  ===================== */
+.apps-slider {
+    height: 270px;
+}
+
+.apps-icon {
+    margin: 0 auto 40px;
+    width: 150px;
+    height: 150px;
+}
+
+.apps-icon img {
+    border-radius: 50%;
+    border: 2px solid var(--main-color);
+    width: 170px;
+    height: 170px;
+    margin: 0 auto;
+
+}
+
+.apps-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* =====================  GLOBAL  ===================== */
+.section__title {
+    color: var(--green);
+    font-weight: bold;
+    font-size: 28px;
+    border-bottom: 4px solid var(--main-color);
+    padding-bottom: 13px;
+    margin-bottom: 40px;
+}
