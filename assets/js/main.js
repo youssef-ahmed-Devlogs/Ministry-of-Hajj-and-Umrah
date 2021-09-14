@@ -1,3 +1,13 @@
+// =====================  SECTIONS CONTROLS  =====================
+const sectionsControls = document.querySelectorAll(".sections-controls a");
+
+sectionsControls.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    remClasses(sectionsControls, "active");
+    btn.classList.add("active");
+  });
+});
+
 // =====================  SWIPER JS RESPONSIVE  =====================
 let s3Count = 3;
 let s4Count = 4;
@@ -93,6 +103,30 @@ function remClasses(target, cls) {
   });
 }
 
+// =====================  AWARENESS CENTER  =====================
+const popUpWindow = document.querySelector(".pop__up__window");
+const popUpCloseBtn = popUpWindow.querySelector(".pop__up-close");
+const awarenessImgs = document.querySelectorAll(
+  ".awareness__center-slider img"
+);
+
+popUpImage(awarenessImgs, popUpWindow, popUpCloseBtn);
+
+function popUpImage(arrayOfImages, window, closeBtn) {
+  arrayOfImages.forEach((img) => {
+    img.addEventListener("click", () => {
+      const src = img.getAttribute("src");
+      const content = window.querySelector("img");
+      content.src = src;
+      window.style.display = "block";
+    });
+  });
+
+  closeBtn.addEventListener("click", () => {
+    window.style.display = "none";
+  });
+}
+
 // Animation On Scroll
 
 const sr = new ScrollReveal({
@@ -102,7 +136,6 @@ const sr = new ScrollReveal({
   reset: true,
 });
 
-ScrollReveal().reveal("header");
 ScrollReveal().reveal(".carousel.slide");
 ScrollReveal().reveal(".summary .row .summary__icon", { interval: 200 });
 ScrollReveal().reveal(".electronic__services");

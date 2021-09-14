@@ -13,6 +13,145 @@
   font-family: "Cairo", sans-serif;
 }
 
+body {
+  margin: 0 25px;
+}
+
+@media (max-width: 600px) {
+  body {
+    margin: 0;
+  }
+}
+
+/* =====================  SECTIONS CONTROLS  ===================== */
+.sections-controls {
+  position: fixed;
+  right: 7px;
+  top: 50%;
+}
+
+.sections-controls a {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--dark);
+  display: block;
+  transition: 0.3s ease-in;
+}
+
+.sections-controls a.active {
+  width: 10px;
+  height: 10px;
+  background-color: transparent;
+  border: 1px solid var(--dark-light);
+}
+
+@media (max-width: 600px) {
+  .sections-controls {
+    display: none !important;
+  }
+}
+
+/* =====================  SOCIAL MEDIA SIDE  ===================== */
+.social__media__side {
+  position: fixed;
+  top: 50%;
+  left: 5px;
+}
+
+.social__media__side a i.fa-twitter {
+  color: var(--blue);
+}
+
+.social__media__side a i.fa-youtube {
+  color: rgb(255, 35, 35);
+}
+
+@media (max-width: 600px) {
+  .social__media__side {
+    display: none !important;
+  }
+}
+
+/* =====================  GO TO TOP BUTTON  ===================== */
+.go__to__top {
+  text-decoration: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 30;
+  cursor: pointer;
+  width: 100%;
+  background-color: var(--white);
+  font-weight: bold;
+  color: var(--dark);
+  padding: 5px;
+  border-top: 1px solid #4d4d4d42;
+}
+
+.go__to__top:hover {
+  color: var(--dark);
+}
+
+.go__to__top span {
+  color: var(--main-color);
+}
+
+/* =====================  POP UP WINDOW  ===================== */
+.pop__up__window {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 3000;
+  display: none;
+}
+
+.pop__up-content {
+  max-width: 900px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.pop__up-content img {
+  border-radius: 5px;
+  transform-style: preserve-3d;
+}
+
+.pop__up-close {
+  position: absolute;
+  right: 0;
+  top: -70px;
+  cursor: pointer;
+  font-size: 30px;
+  color: rgb(233, 47, 47);
+  transition: 0.5s ease-in-out;
+}
+
+.pop__up-close:hover {
+  opacity: 0.6;
+}
+
+@media (max-width: 768px) {
+  .pop__up-close {
+    position: absolute;
+    right: 15px;
+    top: -70px;
+    font-size: 25px;
+    transition: 0.5s ease-in-out;
+  }
+
+  .pop__up-content {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
 /* =====================  HEADER  =====================*/
 .header__logo {
   width: 300px;
@@ -23,33 +162,84 @@
   padding: 15px;
 }
 
-.bottom__header a {
+.bottom__header li {
+  cursor: pointer;
+  color: var(--white);
+}
+
+.bottom__header li:not(:last-child) {
+  position: relative;
+}
+
+.bottom__header .navbar-nav > li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -53px;
+  background-color: var(--white);
+  width: 2px;
+  height: 100%;
+}
+
+.bottom__header .navbar-nav > li > a {
   color: var(--white) !important;
-  padding: 15px;
   display: block;
   text-align: center;
   transition: 0.3s ease-in-out;
   font-weight: bold;
 }
 
-.bottom__header a:hover,
-.bottom__header a.active {
-  background-color: var(--dark);
+.bottom__header .nav-item:hover .dropdown-menu {
+  display: block;
+  text-align: initial;
+}
+
+.bottom__header .nav-item:hover .dropdown-menu a {
+  transition: 0.3s ease-in-out;
+}
+
+.bottom__header .nav-item:hover .dropdown-menu a:hover {
+  color: var(--white);
+  background-color: var(--main-color);
+}
+
+.bottom__header .nav-item:hover .dropdown-menu a:hover i {
+  transform: rotateX(10deg);
 }
 
 @media (min-width: 992px) {
-  .bottom__header {
-    padding: 0;
-  }
-
   .bottom__header .navbar-collapse {
     display: block !important;
+  }
+}
+
+@media (max-width: 1396px) {
+  .bottom__header .navbar-nav > li:not(:last-child)::after {
+    left: -30px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .bottom__header .navbar-nav > li:not(:last-child)::after {
+    left: -13px;
   }
 }
 
 @media (max-width: 992px) {
   .bottom__header .navbar-collapse {
     margin-top: 30px;
+  }
+
+  .bottom__header li:not(:last-child)::after {
+    display: none;
+    position: initial;
+  }
+}
+
+@media (min-width: 975px) {
+  .bottom__header li .dropdown-menu {
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 
@@ -217,6 +407,48 @@
   height: 270px;
 }
 
+.apps .swiper-slide {
+  cursor: pointer;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+}
+
+.apps .swiper-slide .flip-card {
+  transition: 0.7s ease-in-out;
+  transform-style: preserve-3d;
+  height: 100%;
+}
+
+.apps .swiper-slide:hover .flip-card {
+  transform: rotateY(180deg);
+}
+
+.apps .swiper-slide .back {
+  transform: rotateY(180deg);
+}
+
+.apps .swiper-slide .back,
+.apps .swiper-slide .front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.apps .swiper-slide .front,
+.apps .swiper-slide .back {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 20px 15px 10px;
+  background-color: var(--white);
+}
+
+.apps .swiper-slide .back .store-icon {
+  max-width: 140px;
+  margin: 0 auto;
+  display: block;
+}
+
 .apps-icon {
   margin: 0 auto 40px;
   width: 150px;
@@ -236,7 +468,7 @@
   font-weight: bold;
 }
 
-/* =====================  MEDIA CENTER  ===================== */
+/* =====================  MEDIA CENTER - news  ===================== */
 .media__center-gallery .gallery__list li {
   background-color: var(--green);
   color: var(--white);
@@ -252,22 +484,18 @@
 .media__center-gallery .gallery__list li.active::after {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: -2px;
   left: 50%;
   transform: translateX(-50%);
   border-width: 20px;
   border-style: solid;
-  border-color: transparent transparent var(--light) transparent;
+  border-color: transparent transparent var(--white) transparent;
   transition: 0.3s ease-in-out;
 }
 
 .media__center-gallery .gallery__list li:hover {
   background-color: var(--light);
   color: var(--green);
-}
-
-.media__center-gallery .gallery__list li:hover::after {
-  border-color: transparent transparent var(--green) transparent;
 }
 
 @media (max-width: 1300px) {
@@ -320,13 +548,15 @@
   display: block;
 }
 
-.media__center-gallery .news .card {
+.media__center-gallery .news .card,
+.media__center-gallery .events .card {
   position: relative;
   border: none !important;
   background-color: var(--light);
 }
 
-.media__center-gallery .news .card-badge {
+.media__center-gallery .news .card-badge,
+.media__center-gallery .events .card-badge {
   position: absolute;
   right: 0;
   top: 0;
@@ -340,42 +570,142 @@
   font-size: 13px;
 }
 
-.media__center-gallery .news .card-title {
+.media__center-gallery .news .card-title,
+.media__center-gallery .events .card-title,
+.media__center-gallery .hajj-magazine .card-title {
   color: var(--main-color);
   font-size: 18px;
 }
 
-.media__center-gallery .news .card-date-location {
+.media__center-gallery .news .card-date-location,
+.media__center-gallery .events .card-date-location {
   font-size: 13px;
   color: var(--dark-light);
 }
 
-.media__center-gallery .news .card-text {
+.media__center-gallery .news .card-text,
+.media__center-gallery .events .card-text,
+.media__center-gallery .hajj-magazine .card-text {
   color: var(--dark-light);
   font-size: 15px;
 }
 
-.media__center-gallery .news .card-link {
+.media__center-gallery .news .card-link,
+.media__center-gallery .events .card-link,
+.media__center-gallery .hajj-magazine .card-link {
   text-decoration: none;
   color: var(--green);
   font-weight: bold;
   transition: 0.3s ease-in-out;
 }
 
-.media__center-gallery .news .card-link:hover {
+.media__center-gallery .news .card-link:hover,
+.media__center-gallery .events .card-link:hover,
+.media__center-gallery .hajj-magazine .card-link:hover {
   opacity: 0.7;
 }
 
-.media__center-gallery .news .card-link i:first-child {
+.media__center-gallery .news .card-link i:first-child,
+.media__center-gallery .events .card-link i:first-child,
+.media__center-gallery .hajj-magazine .card-link i:first-child {
   margin: -7px;
 }
 
+/* =====================  MEDIA CENTER - events  ===================== */
+.media__center-gallery .events .card {
+  height: 485px;
+}
+
+.media__center-gallery .events .card-title,
+.media__center-gallery .hajj-magazine .card-title {
+  font-weight: bold;
+}
+
+/* =====================  MEDIA CENTER - hajj-magazine  ===================== */
+.media__center-gallery .hajj-magazine .animation-top-parent {
+  max-height: 400px;
+}
+
+.media__center-gallery .hajj-magazine .animation-top {
+  bottom: -164px;
+}
+
+@media (max-width: 1381px) {
+  .media__center-gallery .hajj-magazine .animation-top {
+    bottom: -188px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .media__center-gallery .hajj-magazine .animation-top {
+    bottom: -163px;
+  }
+}
+
+@media (max-width: 768px) {
+  .media__center-gallery .hajj-magazine .animation-top {
+    bottom: -142px;
+  }
+}
+
+/* =====================  MEDIA CENTER - media-library  ===================== */
+.media__center-gallery .media-library .animation-top-parent {
+  height: 300px;
+}
+
+.media__center-gallery .media-library .card-title {
+  font-size: 18px;
+}
+
 /* =====================  AWARENESS CENTER  ===================== */
+
+.awareness__center .swiper-slide {
+  height: 282px;
+}
+.awareness__center-title {
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  font-weight: bold;
+  background: #fff;
+  padding: 10px 10px 10px 20px;
+  border-radius: 0 0 0 23px;
+  z-index: 2;
+  font-size: 14px;
+}
+
+.awareness__center-title:hover a {
+  color: var(--blue);
+}
+
+.awareness__center-title a {
+  text-decoration: none;
+  color: var(--main-color);
+  transition: 0.4s ease-in-out;
+}
+
 .awareness__center-img {
   width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+}
+
+.awareness__center-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.awareness__center-img:hover img {
+  filter: grayscale(100%);
 }
 
 /* =====================  PARTNERS  ===================== */
+.partners {
+  margin-bottom: 250px;
+}
+
 .partners-icon {
   border: 3px solid var(--main-color);
   margin: 0 auto;
@@ -392,6 +722,7 @@ footer {
   color: var(--light);
   position: relative;
   padding: 20px 0;
+  bottom: 35px;
 }
 
 .footer-top {
@@ -420,6 +751,7 @@ footer {
 }
 
 /* =====================  GLOBAL  ===================== */
+/* MY TITLES */
 .section__title {
   color: var(--green);
   font-weight: bold;
@@ -427,4 +759,86 @@ footer {
   border-bottom: 4px solid var(--main-color);
   padding-bottom: 13px;
   margin-bottom: 40px;
+}
+
+/* MY ANIMATIONS */
+.animation-top-parent {
+  position: relative;
+  overflow: hidden;
+  height: 485px;
+}
+
+.animation-top-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.animation-top {
+  bottom: -174px;
+  position: absolute;
+  background-color: #edeaeaed;
+  transition: 0.4s ease-in-out;
+  width: 100%;
+}
+
+.animation-top-parent:hover .animation-top {
+  bottom: 0;
+}
+
+@media (max-width: 1420px) {
+  .animation-top {
+    bottom: -195px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .animation-top {
+    bottom: -174px;
+  }
+}
+
+@media (max-width: 991px) {
+  .animation-top {
+    bottom: -153px;
+  }
+}
+
+@media (max-width: 767px) {
+  .animation-top {
+    bottom: -125px;
+  }
+}
+
+@media (max-width: 426px) {
+  .animation-top {
+    bottom: -146px;
+  }
+}
+
+@media (max-width: 320px) {
+  .animation-top {
+    bottom: -176px;
+  }
+}
+
+@media (max-width: 280px) {
+  .animation-top {
+    bottom: -193px;
+  }
+}
+
+/* MY BUTTONS */
+.btn-green {
+  max-width: 120px;
+  margin-right: 12px;
+  margin-left: 12px;
+  background-color: var(--light);
+  color: var(--green);
+  font-weight: bold;
+}
+
+.btn-green:hover {
+  background-color: var(--green);
+  color: var(--light);
 }
