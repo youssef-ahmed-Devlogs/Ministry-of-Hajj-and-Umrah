@@ -146,7 +146,7 @@ body {
   }
 
   .pop__up-content {
-    width: 100%;
+    width: 70%;
     padding-left: 15px;
     padding-right: 15px;
   }
@@ -155,6 +155,17 @@ body {
 /* =====================  HEADER  =====================*/
 .header__logo {
   width: 300px;
+}
+
+.top__header ul li {
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+  font-size: 20px;
+  color: var(--dark);
+}
+
+.top__header ul li:hover {
+  color: var(--main-color);
 }
 
 .bottom__header {
@@ -243,6 +254,27 @@ body {
   }
 }
 
+/* =====================  BREADCRUMB  ===================== */
+nav.breadcrumb {
+  background-color: var(--green);
+}
+
+nav.breadcrumb a {
+  text-decoration: none;
+  color: var(--light);
+  font-weight: bold;
+  font-size: 14px;
+}
+
+nav.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+nav.breadcrumb i {
+  color: var(--light);
+  font-size: 12px;
+}
+
 /* =====================  SLIDER  ===================== */
 .carousel-inner {
   max-height: 500px;
@@ -275,6 +307,44 @@ body {
   width: 4px;
   height: 100%;
   background-color: var(--white);
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+  opacity: 0.7;
+}
+
+.carousel-control-next-icon {
+  background-image: url("../images/arrow_right.svg");
+}
+
+.carousel-control-prev-icon {
+  background-image: url("../images/arrow_left.svg");
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  width: 4rem;
+  height: 4rem;
+}
+
+.slider-img {
+  transition: 1s ease-in-out;
+  transform-origin: center;
+  animation-name: zoomIn;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate-reverse;
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.5);
+  }
 }
 
 @media (max-width: 991px) {
@@ -412,6 +482,7 @@ body {
   border: none;
   border-radius: 0;
   padding: 0;
+  position: relative;
 }
 
 .apps .swiper-slide .flip-card {
@@ -660,8 +731,9 @@ body {
 /* =====================  AWARENESS CENTER  ===================== */
 
 .awareness__center .swiper-slide {
-  height: 282px;
+  height: 500px;
 }
+
 .awareness__center-title {
   position: absolute;
   right: 4px;
@@ -672,6 +744,7 @@ body {
   border-radius: 0 0 0 23px;
   z-index: 2;
   font-size: 14px;
+  line-height: 1.5;
 }
 
 .awareness__center-title:hover a {
@@ -701,6 +774,18 @@ body {
   filter: grayscale(100%);
 }
 
+/* =====================  INITIATIVES  ===================== */
+.initiatives-slider .swiper-slide {
+  height: 215px;
+}
+.initiatives-img {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 110px;
+  z-index: -1;
+}
+
 /* =====================  PARTNERS  ===================== */
 .partners {
   margin-bottom: 250px;
@@ -716,6 +801,127 @@ body {
   width: 70%;
 }
 
+/* ===================== INTERNAL PAGE ===>  MINISTRY VISION  ===================== */
+.ministry__vision {
+  padding: 100px 0;
+}
+
+.ministry__vision__left-content h3 {
+  font-size: 18px;
+  color: var(--main-color);
+  font-weight: bold;
+}
+
+.ministry__vision__left-content p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.ministry__vision__left-content ul li {
+  position: relative;
+  line-height: 2;
+}
+
+.ministry__vision__left-content ul li::after {
+  content: "";
+  position: absolute;
+  right: -16px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--main-color);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.ministry__vision__bottom {
+  background-color: var(--light);
+  padding: 10px 15px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px 0;
+}
+
+@media (max-width: 767px) {
+}
+
+.ministry__vision__bottom i.fa-clock {
+  font-size: 12px;
+  margin-left: 10px;
+}
+
+.ministry__vision__bottom i,
+.ministry__vision__bottom i::after,
+.ministry__vision__bottom i::before {
+  height: 15px;
+  width: 10px;
+  line-height: 15px;
+  text-align: center;
+}
+
+.ministry__vision__bottom .rating__bar {
+  display: flex;
+  align-items: center;
+}
+
+.ministry__vision__bottom .rating__bar input {
+  position: relative;
+  width: 20px;
+  height: 40px;
+  cursor: pointer;
+  --webkit--appearance: none;
+  appearance: none;
+  margin: 0 10px;
+}
+
+.ministry__vision__bottom .rating__bar input::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f005";
+  position: absolute;
+  font-size: 22px;
+  transition: 0.4s ease-in-out;
+  color: var(--dark-light);
+}
+
+.ministry__vision__bottom .rating__bar input:hover ~ input::before,
+.ministry__vision__bottom .rating__bar input:hover::before,
+.ministry__vision__bottom .rating__bar input:checked ~ input::before,
+.ministry__vision__bottom .rating__bar input:checked::before {
+  color: var(--main-color);
+}
+
+.ministry__vision__bottom span {
+  font-size: 14px;
+}
+
+.ministry__vision__bottom ul a {
+  color: var(--light);
+  background-color: var(--green);
+  padding: 8px 11px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  text-align: center;
+  transition: 0.4s ease-in-out;
+}
+
+.ministry__vision__bottom ul a:hover {
+  color: var(--green);
+  background-color: var(--white);
+}
+
+@media (min-width: 1004px) {
+  .ministry__vision__bottom .share__in {
+    margin: 0 auto;
+  }
+}
+
 /* =====================  FOOTER  ===================== */
 footer {
   background-color: var(--dark);
@@ -723,6 +929,12 @@ footer {
   position: relative;
   padding: 20px 0;
   bottom: 35px;
+}
+
+footer a {
+  text-decoration: none;
+  color: var(--white);
+  transition: 0.4s ease-in-out;
 }
 
 .footer-top {
@@ -750,15 +962,84 @@ footer {
   padding-top: 30px;
 }
 
+.footer__bottom-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+@media (max-width: 520px) {
+  .footer-logo {
+    text-align: center;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+.footer-logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.footer-bottom h6 {
+  font-weight: bold;
+  margin-right: -14px;
+  font-size: 15px;
+}
+
+.footer-bottom ul a {
+  display: block;
+  position: relative;
+  font-size: 13px;
+}
+
+.footer-bottom ul a:hover {
+  color: var(--main-color);
+}
+
+.footer-bottom ul a:hover::after {
+  background-color: var(--main-color);
+}
+
+.footer-bottom ul a::after {
+  content: "";
+  position: absolute;
+  right: -14px;
+  top: 14px;
+  width: 10px;
+  height: 1px;
+  background-color: var(--white);
+}
+
 /* =====================  GLOBAL  ===================== */
 /* MY TITLES */
-.section__title {
+.section__title,
+.section__title-2 {
   color: var(--green);
   font-weight: bold;
   font-size: 28px;
   border-bottom: 4px solid var(--main-color);
   padding-bottom: 13px;
   margin-bottom: 40px;
+}
+
+.section__title-2 {
+  text-align: center;
+  border: none;
+  position: relative;
+}
+
+.section__title-2::after {
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  content: "";
+  width: 70px;
+  height: 4px;
+  background-color: var(--main-color);
 }
 
 /* MY ANIMATIONS */

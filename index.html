@@ -111,7 +111,28 @@
                 <img class="w-100" src="assets/images/main-logo.png" alt="" />
               </div>
             </div>
-            <div class="col-md-6 text-start">TEST</div>
+            <div class="col-md-6">
+              <ul
+                class="
+                  list-unstyled
+                  p-0
+                  d-flex
+                  align-items-center
+                  justify-content-end
+                "
+              >
+                <li>
+                  <i class="fas fa-network-wired"></i>
+                </li>
+
+                <li class="mx-3">
+                  <i class="fas fa-globe"></i>
+                </li>
+                <li>
+                  <i class="fas fa-search"></i>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -251,9 +272,13 @@
     </header>
 
     <!-- =====================  SLIDER  ===================== -->
-    <div id="carouselSlider" class="carousel slide" data-bs-ride="carousel">
+    <div
+      id="carouselSlider"
+      class="carousel slide carousel-fade"
+      data-bs-ride="carousel"
+    >
       <div class="carousel-inner">
-        <div class="carousel-item active">
+        <div class="carousel-item active" data-bs-interval="10000">
           <div>
             <p class="slider-text">
               1 نص تجريبي باللغة العربية نص تجريبي باللغة العربية نص تجريبي
@@ -263,12 +288,12 @@
             <div class="overlay"></div>
             <img
               src="assets/images/slider_bg/1.JPG"
-              class="d-block w-100"
+              class="d-block slider-img w-100"
               alt="..."
             />
           </div>
         </div>
-        <div class="carousel-item">
+        <div class="carousel-item" data-bs-interval="10000">
           <div>
             <p class="slider-text">
               نص تجريبي باللغة العربية نص تجريبي باللغة العربية نص تجريبي باللغة
@@ -278,12 +303,12 @@
             <div class="overlay"></div>
             <img
               src="assets/images/slider_bg/2.JPG"
-              class="d-block w-100"
+              class="d-block slider-img w-100"
               alt="..."
             />
           </div>
         </div>
-        <div class="carousel-item">
+        <div class="carousel-item" data-bs-interval="10000">
           <div>
             <p class="slider-text">
               نص تجريبي باللغة العربية نص تجريبي باللغة العربية نص تجريبي باللغة
@@ -293,7 +318,7 @@
             <div class="overlay"></div>
             <img
               src="assets/images/slider_bg/3.JPG"
-              class="d-block w-100"
+              class="d-block slider-img w-100"
               alt="..."
             />
           </div>
@@ -550,106 +575,6 @@
         <h2 class="section__title">التطبيقات</h2>
         <div class="swiper apps-slider">
           <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="flip-card">
-                <div class="front">
-                  <div class="apps-icon">
-                    <img src="assets/images/Eatmarna.jpg" alt="" />
-                  </div>
-                  <h4 class="apps-title text-center">أسم التطبيق</h4>
-                </div>
-                <div
-                  class="
-                    back
-                    d-flex
-                    align-items-center
-                    justify-content-center
-                    text-center
-                  "
-                >
-                  <div>
-                    <a href="#1" class="store-icon mb-2">
-                      <img
-                        class="w-100"
-                        src="assets/images/AppStore.png"
-                        alt=""
-                      />
-                    </a>
-                    <a href="#2" class="store-icon mb-2">
-                      <img
-                        class="w-100"
-                        src="assets/images/GoogleStore.png"
-                        alt=""
-                      />
-                    </a>
-                    <a href="#3" class="store-icon mb-2">
-                      <img
-                        class="w-100"
-                        src="assets/images/HuaweiStore.png"
-                        alt=""
-                      />
-                    </a>
-                    <a href="#4" class="store-icon mb-2">
-                      <img
-                        class="w-100"
-                        src="assets/images/MohuStore.png"
-                        alt=""
-                      />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="flip-card">
-                <div class="front">
-                  <div class="apps-icon">
-                    <img src="assets/images/Eatmarna.jpg" alt="" />
-                  </div>
-                  <h4 class="apps-title text-center">أسم التطبيق</h4>
-                </div>
-                <div
-                  class="
-                    back
-                    d-flex
-                    align-items-center
-                    justify-content-center
-                    text-center
-                  "
-                >
-                  <div>
-                    <a href="#1" class="store-icon mb-2">
-                      <img
-                        class="w-100"
-                        src="assets/images/AppStore.png"
-                        alt=""
-                      />
-                    </a>
-                    <a href="#2" class="store-icon mb-2">
-                      <img
-                        class="w-100"
-                        src="assets/images/GoogleStore.png"
-                        alt=""
-                      />
-                    </a>
-                    <a href="#3" class="store-icon mb-2">
-                      <img
-                        class="w-100"
-                        src="assets/images/HuaweiStore.png"
-                        alt=""
-                      />
-                    </a>
-                    <a href="#4" class="store-icon mb-2">
-                      <img
-                        class="w-100"
-                        src="assets/images/MohuStore.png"
-                        alt=""
-                      />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
             <div class="swiper-slide">
               <div class="flip-card">
                 <div class="front">
@@ -1813,7 +1738,9 @@
           <div class="swiper-wrapper">
             <div class="swiper-slide p-1">
               <h5 class="awareness__center-title mb-3">
-                <a href="#"> العنوان </a>
+                <a href="#">
+                  العنوان العنوان العنوان العنوان العنوان العنوان العنوان
+                </a>
               </h5>
               <div class="awareness__center-img">
                 <img
@@ -1881,90 +1808,90 @@
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <h5 class="initiatives-title mb-3">العنوان</h5>
+              <p>
+                نص باللغة العربية نص باللغة العربية نص باللغة العربية نص باللغة
+                العربية نص باللغة العربية نص باللغة العربية نص باللغة العربية نص
+                باللغة العربية
+              </p>
               <div class="initiatives-img">
                 <img
                   class="w-100 rounded-bottom"
-                  src="assets/images/slider_bg/2.jpg"
+                  src="assets/images/mc_bg.png"
                   alt=""
                 />
               </div>
             </div>
             <div class="swiper-slide">
               <h5 class="initiatives-title mb-3">العنوان</h5>
+              <p>
+                نص باللغة العربية نص باللغة العربية نص باللغة العربية نص باللغة
+                العربية نص باللغة العربية نص باللغة العربية نص باللغة العربية نص
+                باللغة العربية
+              </p>
               <div class="initiatives-img">
                 <img
                   class="w-100 rounded-bottom"
-                  src="assets/images/slider_bg/2.jpg"
+                  src="assets/images/mc_bg.png"
                   alt=""
                 />
               </div>
             </div>
             <div class="swiper-slide">
               <h5 class="initiatives-title mb-3">العنوان</h5>
+              <p>
+                نص باللغة العربية نص باللغة العربية نص باللغة العربية نص باللغة
+                العربية نص باللغة العربية نص باللغة العربية نص باللغة العربية نص
+                باللغة العربية
+              </p>
               <div class="initiatives-img">
                 <img
                   class="w-100 rounded-bottom"
-                  src="assets/images/slider_bg/2.jpg"
+                  src="assets/images/mc_bg.png"
                   alt=""
                 />
               </div>
             </div>
             <div class="swiper-slide">
               <h5 class="initiatives-title mb-3">العنوان</h5>
+              <p>
+                نص باللغة العربية نص باللغة العربية نص باللغة العربية نص باللغة
+                العربية نص باللغة العربية نص باللغة العربية نص باللغة العربية نص
+                باللغة العربية
+              </p>
               <div class="initiatives-img">
                 <img
                   class="w-100 rounded-bottom"
-                  src="assets/images/slider_bg/2.jpg"
+                  src="assets/images/mc_bg.png"
                   alt=""
                 />
               </div>
             </div>
             <div class="swiper-slide">
               <h5 class="initiatives-title mb-3">العنوان</h5>
+              <p>
+                نص باللغة العربية نص باللغة العربية نص باللغة العربية نص باللغة
+                العربية نص باللغة العربية نص باللغة العربية نص باللغة العربية نص
+                باللغة العربية
+              </p>
               <div class="initiatives-img">
                 <img
                   class="w-100 rounded-bottom"
-                  src="assets/images/slider_bg/2.jpg"
+                  src="assets/images/mc_bg.png"
                   alt=""
                 />
               </div>
             </div>
             <div class="swiper-slide">
               <h5 class="initiatives-title mb-3">العنوان</h5>
+              <p>
+                نص باللغة العربية نص باللغة العربية نص باللغة العربية نص باللغة
+                العربية نص باللغة العربية نص باللغة العربية نص باللغة العربية نص
+                باللغة العربية
+              </p>
               <div class="initiatives-img">
                 <img
                   class="w-100 rounded-bottom"
-                  src="assets/images/slider_bg/2.jpg"
-                  alt=""
-                />
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <h5 class="initiatives-title mb-3">العنوان</h5>
-              <div class="initiatives-img">
-                <img
-                  class="w-100 rounded-bottom"
-                  src="assets/images/slider_bg/2.jpg"
-                  alt=""
-                />
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <h5 class="initiatives-title mb-3">العنوان</h5>
-              <div class="initiatives-img">
-                <img
-                  class="w-100 rounded-bottom"
-                  src="assets/images/slider_bg/2.jpg"
-                  alt=""
-                />
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <h5 class="initiatives-title mb-3">العنوان</h5>
-              <div class="initiatives-img">
-                <img
-                  class="w-100 rounded-bottom"
-                  src="assets/images/slider_bg/2.jpg"
+                  src="assets/images/mc_bg.png"
                   alt=""
                 />
               </div>
@@ -2041,10 +1968,81 @@
         </ul>
       </div>
       <div class="footer-bottom">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero fugiat
-        animi odio magnam, earum dicta incidunt autem quis harum excepturi.
-        Consequuntur quod dolorem et consectetur quos expedita non explicabo
-        velit.
+        <div class="container">
+          <div class="footer__bottom-content">
+            <div class="d-flex align-items-center mb-4">
+              <a href="#" class="footer-logo d-block"> وزارة الحج والعمرة </a>
+            </div>
+            <div class="mb-4">
+              <h6>مواقع ذات صلة</h6>
+              <ul class="list-unstyled p-0">
+                <li>
+                  <a href="#">وزارة الخارجية</a>
+                </li>
+                <li>
+                  <a href="#">وزارة الداخلية</a>
+                </li>
+                <li>
+                  <a href="#">امارة منطقة مكة المكرمة</a>
+                </li>
+                <li>
+                  <a href="#">الرئاسة العامة لشؤون الحرمين</a>
+                </li>
+                <li>
+                  <a href="#">وزارة الصحة</a>
+                </li>
+                <li>
+                  <a href="#">الهيئة العامة للطيران المدني</a>
+                </li>
+                <li>
+                  <a href="#">امارة منطقة المدينة المنورة</a>
+                </li>
+                <li>
+                  <a href="#">وزارة التجار والأستثمار</a>
+                </li>
+                <li>
+                  <a href="#"
+                    >مشروع المملكة العربية السعودية للافادة من الهدي للأضاحي</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="mb-4">
+              <h6>الروابط السريعة</h6>
+              <ul class="list-unstyled p-0">
+                <li>
+                  <a href="#">الرئيسية</a>
+                </li>
+                <li>
+                  <a href="#">مكتب تحقيق الرؤية بوزارة الحج والعمرة</a>
+                </li>
+                <li>
+                  <a href="#">سياسة الخصوصية</a>
+                </li>
+                <li>
+                  <a href="#">النظام الموحد لحجاج الخارج</a>
+                </li>
+                <li>
+                  <a href="#">المسار الالكتروني لحجاج الداخل</a>
+                </li>
+                <li>
+                  <a href="#">خريطة الموقع</a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h6>التواصل</h6>
+              <ul class="list-unstyled p-0">
+                <li>
+                  <a href="#">أتصل بنا</a>
+                </li>
+                <li>
+                  <a href="#">أستطلاع الرأي</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </footer>
 

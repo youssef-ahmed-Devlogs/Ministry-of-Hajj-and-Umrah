@@ -1,3 +1,86 @@
+// =====================  MEDIA CENTER  =====================
+const gallery__listBtns = document.querySelectorAll(
+  ".media__center-gallery .gallery__list li"
+);
+
+const gallery__items = document.querySelectorAll(".gallery__items-item");
+
+gallery__listBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    remClasses(gallery__listBtns, "active");
+    remClasses(gallery__items, "active");
+    btn.classList.add("active");
+
+    gallery__items.forEach((item) => {
+      if (item.classList.contains(btn.dataset.type)) {
+        item.classList.add("active");
+      }
+    });
+  });
+});
+
+// POP UP WINDOW SELECTORS
+const popUpWindow = document.querySelector(".pop__up__window");
+const popUpCloseBtn = popUpWindow.querySelector(".pop__up-close");
+
+// =====================  MEDIA CENTER - media-library  =====================
+const mediaLibraryImgs = document.querySelectorAll(".media-library img");
+
+popUpImage(mediaLibraryImgs, popUpWindow, popUpCloseBtn);
+
+// =====================  AWARENESS CENTER  =====================
+const awarenessImgs = document.querySelectorAll(
+  ".awareness__center-slider img"
+);
+
+popUpImage(awarenessImgs, popUpWindow, popUpCloseBtn);
+
+const awareness__centerTitle = document.querySelectorAll(
+  ".awareness__center-title a"
+);
+
+// =====================  GLOBAL  =====================
+
+// GLOBAL FUNCTIONS
+function popUpImage(arrayOfImages, window, closeBtn) {
+  arrayOfImages.forEach((img) => {
+    img.addEventListener("click", () => {
+      const src = img.getAttribute("src");
+      const content = window.querySelector("img");
+      content.src = src;
+      window.style.display = "block";
+    });
+  });
+
+  closeBtn.addEventListener("click", () => {
+    window.style.display = "none";
+  });
+}
+
+function remClasses(target, cls) {
+  target.forEach((item) => {
+    item.classList.remove(cls);
+  });
+}
+
+// Animation On Scroll
+
+const sr = new ScrollReveal({
+  origin: "top",
+  distance: "100px",
+  duration: 2000,
+  reset: true,
+});
+
+ScrollReveal().reveal(".carousel.slide");
+ScrollReveal().reveal(".summary .row .summary__icon", { interval: 200 });
+ScrollReveal().reveal(".electronic__services");
+ScrollReveal().reveal(".apps .swiper-wrapper");
+ScrollReveal().reveal(".media__center");
+ScrollReveal().reveal(".awareness__center");
+ScrollReveal().reveal(".initiatives");
+ScrollReveal().reveal(".partners .sr", { interval: 200 });
+
 // =====================  SECTIONS CONTROLS  =====================
 const sectionsControls = document.querySelectorAll(".sections-controls a");
 
@@ -75,72 +158,3 @@ function responsiveSwiperFour(target) {
     },
   });
 }
-
-// =====================  MEDIA CENTER  =====================
-const gallery__listBtns = document.querySelectorAll(
-  ".media__center-gallery .gallery__list li"
-);
-
-const gallery__items = document.querySelectorAll(".gallery__items-item");
-
-gallery__listBtns.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    remClasses(gallery__listBtns, "active");
-    remClasses(gallery__items, "active");
-    btn.classList.add("active");
-
-    gallery__items.forEach((item) => {
-      if (item.classList.contains(btn.dataset.type)) {
-        item.classList.add("active");
-      }
-    });
-  });
-});
-
-function remClasses(target, cls) {
-  target.forEach((item) => {
-    item.classList.remove(cls);
-  });
-}
-
-// =====================  AWARENESS CENTER  =====================
-const popUpWindow = document.querySelector(".pop__up__window");
-const popUpCloseBtn = popUpWindow.querySelector(".pop__up-close");
-const awarenessImgs = document.querySelectorAll(
-  ".awareness__center-slider img"
-);
-
-popUpImage(awarenessImgs, popUpWindow, popUpCloseBtn);
-
-function popUpImage(arrayOfImages, window, closeBtn) {
-  arrayOfImages.forEach((img) => {
-    img.addEventListener("click", () => {
-      const src = img.getAttribute("src");
-      const content = window.querySelector("img");
-      content.src = src;
-      window.style.display = "block";
-    });
-  });
-
-  closeBtn.addEventListener("click", () => {
-    window.style.display = "none";
-  });
-}
-
-// Animation On Scroll
-
-const sr = new ScrollReveal({
-  origin: "top",
-  distance: "100px",
-  duration: 2000,
-  reset: true,
-});
-
-ScrollReveal().reveal(".carousel.slide");
-ScrollReveal().reveal(".summary .row .summary__icon", { interval: 200 });
-ScrollReveal().reveal(".electronic__services");
-ScrollReveal().reveal(".apps .swiper-wrapper");
-ScrollReveal().reveal(".media__center");
-ScrollReveal().reveal(".awareness__center");
-ScrollReveal().reveal(".initiatives");
-ScrollReveal().reveal(".partners .sr", { interval: 200 });
