@@ -257,6 +257,7 @@ body {
 /* =====================  BREADCRUMB  ===================== */
 nav.breadcrumb {
   background-color: var(--green);
+  margin-bottom: 0;
 }
 
 nav.breadcrumb a {
@@ -801,25 +802,126 @@ nav.breadcrumb i {
   width: 70%;
 }
 
+/* ===================== INTERNAL PAGE ===>  MINISTRY VISION OPERATIONS  ===================== */
+.ministry__vision-operation {
+  background-color: var(--green);
+  border-top: 1px solid var(--light);
+  padding: 10px 0;
+}
+
+.ministry__vision-operation-content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.ministry__vision-operation-content a,
+.ministry__vision-operation-content span {
+  cursor: pointer;
+}
+
+.ministry__vision-operation-content i {
+  cursor: pointer;
+  font-size: 25px;
+  padding: 10px;
+  color: var(--light);
+}
+
+.share__icon {
+  position: relative;
+}
+
+.share__socialList {
+  position: absolute;
+  background-color: var(--light);
+  border: 1px solid #3734328e;
+  padding: 5px 8px !important;
+  display: none;
+  align-items: center;
+  left: -264%;
+  transform: translateX(-50%);
+  border-radius: 10px;
+}
+
+.share__socialList.active {
+  display: flex;
+}
+
+.share__socialList i {
+  padding: 10px 15px;
+  border-radius: 10px;
+  margin: 0 5px;
+  transition: 0.4s ease-in;
+}
+
+.share__socialList i:hover {
+  transform: scale(0.8);
+}
+
+.share__socialList i.fa-twitter {
+  background-color: rgb(148, 177, 255);
+}
+
+.share__socialList i.fa-facebook-f {
+  background-color: rgb(71, 116, 240);
+}
+
+.share__socialList i.fa-link {
+  background-color: rgb(129, 135, 209);
+}
+
+.share__socialList i.fa-linkedin-in {
+  background-color: rgb(4, 21, 68);
+}
+
+.share__socialList::after {
+  content: "";
+  position: absolute;
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent transparent var(--light) transparent;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -16px;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  .ministry__vision {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .ministry__vision,
+  .ministry__vision * {
+    visibility: visible;
+  }
+}
+
 /* ===================== INTERNAL PAGE ===>  MINISTRY VISION  ===================== */
 .ministry__vision {
   padding: 100px 0;
 }
 
 .ministry__vision__left-content h3 {
-  font-size: 18px;
+  font-size: 1.13rem;
   color: var(--main-color);
   font-weight: bold;
 }
 
 .ministry__vision__left-content p {
-  font-size: 14px;
+  font-size: 0.9rem;
   line-height: 1.5;
 }
 
 .ministry__vision__left-content ul li {
   position: relative;
   line-height: 2;
+  font-size: 0.9rem;
 }
 
 .ministry__vision__left-content ul li::after {
@@ -1019,7 +1121,7 @@ footer a {
 .section__title-2 {
   color: var(--green);
   font-weight: bold;
-  font-size: 28px;
+  font-size: 1.8rem;
   border-bottom: 4px solid var(--main-color);
   padding-bottom: 13px;
   margin-bottom: 40px;

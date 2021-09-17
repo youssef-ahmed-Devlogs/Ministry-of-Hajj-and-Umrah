@@ -39,6 +39,19 @@ const awareness__centerTitle = document.querySelectorAll(
   ".awareness__center-title a"
 );
 
+// ===================== INTERNAL PAGE ===>  MINISTRY VISION OPERATIONS  =====================
+
+// Share button
+const shareIcon = document.querySelector(".share__icon");
+const shareSocialList = document.querySelector(".share__socialList");
+shareIcon.addEventListener("click", () => {
+  if (shareSocialList.classList.contains("active")) {
+    shareSocialList.classList.remove("active");
+  } else {
+    shareSocialList.classList.add("active");
+  }
+});
+
 // =====================  GLOBAL  =====================
 
 // GLOBAL FUNCTIONS
