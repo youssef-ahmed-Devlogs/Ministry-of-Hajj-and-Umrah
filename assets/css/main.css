@@ -281,33 +281,55 @@ nav.breadcrumb i {
   max-height: 500px;
 }
 
+.news-slider {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+}
+
+.news-slider .slider-text {
+  color: var(--white);
+  font-size: 20px;
+  display: none;
+}
+
+.news-slider .slider-text.active {
+  display: block;
+}
+
+.news-slider .slider-text a {
+  text-decoration: none;
+  color: var(--main-color);
+  font-weight: bold;
+}
+
+.news-slider .slider-text::after {
+  content: "";
+  position: absolute;
+  right: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 100%;
+  background-color: var(--white);
+}
+
 .carousel-inner .overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
 }
 
-.carousel-inner .slider-text {
-  position: absolute;
-  top: 250px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 5;
-  color: var(--white);
-}
-
-.carousel-inner .slider-text::after {
-  content: "";
-  position: absolute;
-  right: -15px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 4px;
-  height: 100%;
-  background-color: var(--white);
+.control-prev-icon,
+.control-next-icon {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px;
 }
 
 .carousel-control-next,
@@ -325,8 +347,8 @@ nav.breadcrumb i {
 
 .carousel-control-next-icon,
 .carousel-control-prev-icon {
-  width: 4rem;
-  height: 4rem;
+  width: 2.3rem;
+  height: 2.3rem;
 }
 
 .slider-img {
@@ -360,19 +382,26 @@ nav.breadcrumb i {
 }
 
 @media (max-width: 600px) {
-  .carousel-inner .slider-text {
-    top: 150px;
-    font-size: 12px;
+  .news-slider .slider-text {
+    font-size: 10px;
   }
 
-  .carousel-inner .slider-text::after {
+  .news-slider .slider-text::after {
     width: 2px;
   }
-}
 
-@media (max-width: 600px) {
-  .carousel-inner .slider-text {
-    top: 100px;
+  .control-next-icon,
+  .control-prev-icon {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .carousel-control-next-icon,
+  .carousel-control-prev-icon {
+    width: 1.3rem;
+    height: 1.3rem;
   }
 }
 
@@ -388,12 +417,18 @@ nav.breadcrumb i {
   background-color: var(--light);
 }
 
+.summery-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
 .summary__icon {
   max-width: 120px;
   margin: 0 auto;
 }
 
 /* =====================  ELECTRONIC SERVICES  ===================== */
+
 .select-services {
   background-color: var(--green);
   padding: 20px;
@@ -406,6 +441,7 @@ nav.breadcrumb i {
   padding: 10px;
   outline: none;
   border: none;
+  cursor: pointer;
 }
 
 .select-services select::-ms-expand {
@@ -423,6 +459,7 @@ nav.breadcrumb i {
   left: 0;
   transform: translateY(-50%);
   cursor: pointer;
+  pointer-events: none;
 }
 
 .electronic__services-slider {
@@ -434,6 +471,12 @@ nav.breadcrumb i {
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   padding: 20px 15px 10px;
+}
+
+.swiper-button-prev,
+.swiper-rtl .swiper-button-next {
+  background: #d8a53fb3;
+  z-index: 20;
 }
 
 .swiper-button-next:after,
@@ -462,6 +505,14 @@ nav.breadcrumb i {
   font-size: 12px;
   letter-spacing: 0.5px;
   color: var(--dark-light);
+}
+
+.swiper-slide-bg {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 110px;
+  z-index: -1;
 }
 
 @media (max-width: 500px) {
@@ -1022,6 +1073,43 @@ nav.breadcrumb i {
   .ministry__vision__bottom .share__in {
     margin: 0 auto;
   }
+}
+
+/* ===================== INTERNAL PAGE ===>  ELECTRONIC SERVICES DETAILS  ===================== */
+.business-individuals__services-list {
+  font-weight: bold;
+}
+
+.electronic__services-details .services-list-item {
+  cursor: pointer;
+}
+
+.electronic__services-details .services-list-item.active,
+.electronic__services-details .services-list-item:hover {
+  color: var(--main-color);
+}
+
+.electronic__services-details .business-services,
+.electronic__services-details .individuals-services {
+  display: none;
+}
+
+.electronic__services-details .business-services.active,
+.electronic__services-details .individuals-services.active {
+  display: block;
+}
+
+.business-services .all-business__services {
+  display: none !important;
+}
+
+.business-services .all-business__services.active {
+  display: block !important;
+}
+
+.electronic__services-details .card-img {
+  margin: 0 auto;
+  width: 200px;
 }
 
 /* =====================  FOOTER  ===================== */

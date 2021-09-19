@@ -1,3 +1,37 @@
+import { remClasses } from "./globalFun.js";
+
+// ===================== HOME MAIN SLIDER  =====================
+const bootstrapCustomDelay = document.getElementById("bootstrap-custom-delay");
+setInterval(() => bootstrapCustomDelay.click(), 6000);
+
+const newsSliderItems = document.querySelectorAll(".news-slider .slider-text");
+const prevBtn = document.querySelector("button.carousel-control-prev");
+const nextBtn = document.querySelector("button.carousel-control-next");
+let counter = 0;
+
+nextBtn.addEventListener("click", () => {
+  counter++;
+
+  if (counter > newsSliderItems.length - 1) {
+    counter = 0;
+  }
+
+  remClasses(newsSliderItems, "active");
+  newsSliderItems[counter].classList.add("active");
+});
+
+prevBtn.addEventListener("click", () => {
+  if (counter === 0) {
+    counter = newsSliderItems.length;
+  }
+
+  counter--;
+  remClasses(newsSliderItems, "active");
+  newsSliderItems[counter].classList.add("active");
+});
+
+setInterval(() => nextBtn.click(), 10000);
+
 // =====================  MEDIA CENTER  =====================
 const gallery__listBtns = document.querySelectorAll(
   ".media__center-gallery .gallery__list li"
@@ -39,19 +73,6 @@ const awareness__centerTitle = document.querySelectorAll(
   ".awareness__center-title a"
 );
 
-// ===================== INTERNAL PAGE ===>  MINISTRY VISION OPERATIONS  =====================
-
-// Share button
-const shareIcon = document.querySelector(".share__icon");
-const shareSocialList = document.querySelector(".share__socialList");
-shareIcon.addEventListener("click", () => {
-  if (shareSocialList.classList.contains("active")) {
-    shareSocialList.classList.remove("active");
-  } else {
-    shareSocialList.classList.add("active");
-  }
-});
-
 // =====================  GLOBAL  =====================
 
 // GLOBAL FUNCTIONS
@@ -70,19 +91,13 @@ function popUpImage(arrayOfImages, window, closeBtn) {
   });
 }
 
-function remClasses(target, cls) {
-  target.forEach((item) => {
-    item.classList.remove(cls);
-  });
-}
-
 // Animation On Scroll
 
 const sr = new ScrollReveal({
   origin: "top",
   distance: "100px",
   duration: 2000,
-  reset: true,
+  // reset: true,
 });
 
 ScrollReveal().reveal(".carousel.slide");
