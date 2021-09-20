@@ -1,36 +1,4 @@
-import { remClasses } from "./globalFun.js";
-
-// ===================== HOME MAIN SLIDER  =====================
-const bootstrapCustomDelay = document.getElementById("bootstrap-custom-delay");
-setInterval(() => bootstrapCustomDelay.click(), 6000);
-
-const newsSliderItems = document.querySelectorAll(".news-slider .slider-text");
-const prevBtn = document.querySelector("button.carousel-control-prev");
-const nextBtn = document.querySelector("button.carousel-control-next");
-let counter = 0;
-
-nextBtn.addEventListener("click", () => {
-  counter++;
-
-  if (counter > newsSliderItems.length - 1) {
-    counter = 0;
-  }
-
-  remClasses(newsSliderItems, "active");
-  newsSliderItems[counter].classList.add("active");
-});
-
-prevBtn.addEventListener("click", () => {
-  if (counter === 0) {
-    counter = newsSliderItems.length;
-  }
-
-  counter--;
-  remClasses(newsSliderItems, "active");
-  newsSliderItems[counter].classList.add("active");
-});
-
-setInterval(() => nextBtn.click(), 10000);
+import { remClasses, popUpImage } from "./globalFun.js";
 
 // =====================  MEDIA CENTER  =====================
 const gallery__listBtns = document.querySelectorAll(
@@ -59,8 +27,13 @@ const popUpCloseBtn = popUpWindow.querySelector(".pop__up-close");
 
 // =====================  MEDIA CENTER - media-library  =====================
 const mediaLibraryImgs = document.querySelectorAll(".media-library img");
-
 popUpImage(mediaLibraryImgs, popUpWindow, popUpCloseBtn);
+
+// =====================  INTERNAL PAGE ===> MEDIA CENTER - media-library  =====================
+const mediaLibraryDetailsImgs = document.querySelectorAll(
+  ".media__library-details img"
+);
+popUpImage(mediaLibraryDetailsImgs, popUpWindow, popUpCloseBtn);
 
 // =====================  AWARENESS CENTER  =====================
 const awarenessImgs = document.querySelectorAll(
@@ -75,24 +48,7 @@ const awareness__centerTitle = document.querySelectorAll(
 
 // =====================  GLOBAL  =====================
 
-// GLOBAL FUNCTIONS
-function popUpImage(arrayOfImages, window, closeBtn) {
-  arrayOfImages.forEach((img) => {
-    img.addEventListener("click", () => {
-      const src = img.getAttribute("src");
-      const content = window.querySelector("img");
-      content.src = src;
-      window.style.display = "block";
-    });
-  });
-
-  closeBtn.addEventListener("click", () => {
-    window.style.display = "none";
-  });
-}
-
 // Animation On Scroll
-
 const sr = new ScrollReveal({
   origin: "top",
   distance: "100px",
