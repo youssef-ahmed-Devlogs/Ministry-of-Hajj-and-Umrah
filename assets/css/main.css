@@ -562,6 +562,12 @@ nav.breadcrumb i {
   z-index: -1;
 }
 
+@media (max-width: 1184px) {
+  .electronic__services a.btn {
+    margin-top: 20px;
+  }
+}
+
 @media (max-width: 500px) {
   .swiper-button-next:after,
   .swiper-button-prev:after,
@@ -639,6 +645,10 @@ nav.breadcrumb i {
 }
 
 /* =====================  MEDIA CENTER - news  ===================== */
+.gallery__items {
+  overflow: hidden;
+}
+
 .media__center-gallery .gallery__list li {
   background-color: var(--green);
   color: var(--white);
@@ -887,6 +897,12 @@ nav.breadcrumb i {
 /* =====================  PARTNERS  ===================== */
 .partners {
   margin-bottom: 250px;
+}
+
+.partners__content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
 }
 
 .partners-icon {
