@@ -22,6 +22,25 @@
     <link rel="stylesheet" href="assets/plugins/css/bootstrap.min.css" />
 
     <link rel="stylesheet" href="assets/css/main.css" />
+
+    <style>
+      @media print {
+        body * {
+          visibility: hidden;
+        }
+
+        .ministry__vision {
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+
+        .ministry__vision,
+        .ministry__vision * {
+          visibility: visible;
+        }
+      }
+    </style>
   </head>
   <body>
     <!-- =====================  SOCIAL MEDIA SIDE  ===================== -->
@@ -56,10 +75,10 @@
     <!-- =====================  POP UP WINDOW  ===================== -->
     <div class="pop__up__window">
       <div class="pop__up-content">
-        <div class="pop__up-close">
-          <i class="fas fa-times-circle"></i>
-        </div>
         <div class="pop__up-img animate__animated animate__flipInY">
+          <div class="pop__up-close">
+            <i class="fas fa-times-circle"></i>
+          </div>
           <img class="w-100" src="" alt="" />
         </div>
         <div class="all-images"></div>
@@ -90,11 +109,82 @@
                   <i class="fas fa-network-wired"></i>
                 </li>
 
-                <li class="mx-3">
-                  <i class="fas fa-globe"></i>
+                <li class="language-sys mx-3">
+                  <span class="lang-btn" id="lang-btn">
+                    <i class="fas fa-globe"></i>
+                  </span>
+
+                  <div
+                    class="
+                      lang-content
+                      d-none
+                      animate__animated animate__fadeInDown
+                    "
+                    id="lang-content"
+                  >
+                    <div class="lang-item">
+                      <input
+                        class="d-none"
+                        type="radio"
+                        value="arabic"
+                        id="arabic"
+                        name="lang"
+                        checked
+                      />
+                      <label for="arabic">
+                        <img src="assets/images/ar-flag.jpg" alt="arabic" />
+                        عربي
+                      </label>
+                    </div>
+
+                    <div class="lang-item my-2">
+                      <input
+                        class="d-none"
+                        type="radio"
+                        value="english"
+                        id="english"
+                        name="lang"
+                      />
+                      <label for="english">
+                        <img src="assets/images/usa-flag.jpg" alt="arabic" />
+                        English
+                      </label>
+                    </div>
+
+                    <div class="lang-item">
+                      <input
+                        class="d-none"
+                        type="radio"
+                        value="france"
+                        id="france"
+                        name="lang"
+                      />
+                      <label for="france">
+                        <img src="assets/images/fr-flag.jpg" alt="arabic" />
+                        France
+                      </label>
+                    </div>
+                  </div>
                 </li>
-                <li>
-                  <i class="fas fa-search"></i>
+                <li class="search-sys">
+                  <span class="search-btn" id="search-btn">
+                    <i class="fas fa-search"></i>
+                  </span>
+
+                  <div
+                    class="
+                      search-input
+                      d-none
+                      animate__animated animate__fadeInDown
+                    "
+                    id="search-input"
+                  >
+                    <input
+                      class="form-control"
+                      type="text"
+                      placeholder="أبحث"
+                    />
+                  </div>
                 </li>
               </ul>
             </div>
@@ -346,7 +436,8 @@
             <i class="far fa-clock"></i>
             <span> آخر تعديل 27 محرم 1443 </span>
           </div>
-          <div class="d-flex align-items-center">
+          <!-- for new version ! -->
+          <!-- <div class="d-flex align-items-center">
             <span>تقييم المحتوى</span>
 
             <div class="rating__bar">
@@ -356,23 +447,18 @@
               <input type="radio" name="rating" />
               <input type="radio" name="rating" />
             </div>
-          </div>
+          </div> -->
           <div class="d-flex align-items-center share__in">
             <span class="ps-3"> شارك على</span>
             <ul class="list-unstyled d-flex align-items-center p-0 m-0">
               <li class="ms-2">
                 <a href="#">
-                  <i class="fab fa-facebook-f"></i>
+                  <i class="fab fa-youtube"></i>
                 </a>
               </li>
               <li class="ms-2">
                 <a href="#">
                   <i class="fab fa-twitter"></i>
-                </a>
-              </li>
-              <li class="ms-2">
-                <a href="#">
-                  <i class="fab fa-linkedin-in"></i>
                 </a>
               </li>
               <li>
@@ -497,9 +583,9 @@
     <script src="assets/plugins/js/swiper-bundle.min.js"></script>
     <script src="assets/plugins/js/bootstrap.bundle.min.js"></script>
     <script src="assets/plugins/js/scrollreveal.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script type="module" src="assets/js/main.js"></script>
     <script>
-      // ===================== INTERNAL PAGE ===>  MINISTRY VISION OPERATIONS  =====================
+      // ===================== INTERNAL PAGES  =====================
 
       // Share button
       const shareIcon = document.querySelector(".share__icon");
