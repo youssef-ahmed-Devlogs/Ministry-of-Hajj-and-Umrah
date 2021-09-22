@@ -1,3 +1,32 @@
+// =====================  HEADER  =====================
+const searchBtn = document.getElementById("search-btn");
+const searchInput = document.getElementById("search-input");
+
+const langBtn = document.getElementById("lang-btn");
+const langContent = document.getElementById("lang-content");
+
+toggleEleByClick(searchBtn, searchInput, "d-none", [langContent]);
+toggleEleByClick(langBtn, langContent, "d-none", [searchInput]);
+
+function toggleEleByClick(button, toggleEle, clas, othersElements) {
+  button.addEventListener("click", () => {
+    if (toggleEle.classList.contains(clas)) {
+      toggleEle.classList.remove(clas);
+      toggleEle.classList.remove("animate__fadeOutUp");
+
+      othersElements.forEach((ele) => {
+        ele.classList.add(clas);
+      });
+    } else {
+      toggleEle.classList.add("animate__fadeOutUp");
+
+      setTimeout(() => {
+        toggleEle.classList.add(clas);
+      }, 500);
+    }
+  });
+}
+
 import { remClasses, popUpImage } from "./globalFun.js";
 
 // =====================  MEDIA CENTER  =====================
