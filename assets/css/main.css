@@ -13,20 +13,25 @@
   font-family: "Cairo", sans-serif;
 }
 
+html {
+  transition: 0.4s ease-in;
+}
+
 body {
-  margin: 0 25px;
+  margin: 248px 25px 0;
 }
 
 @media (max-width: 600px) {
   body {
-    margin: 0;
+    margin: 248px 0 0;
   }
 }
 
 /* =====================  SECTIONS CONTROLS  ===================== */
+
 .sections-controls {
   position: fixed;
-  right: 7px;
+  right: 3px;
   top: 50%;
 }
 
@@ -37,13 +42,28 @@ body {
   background-color: var(--dark);
   display: block;
   transition: 0.3s ease-in;
+  position: relative;
 }
 
 .sections-controls a.active {
-  width: 10px;
-  height: 10px;
+  width: 20px;
+  height: 20px;
   background-color: transparent;
-  border: 1px solid var(--dark-light);
+  border: 1px solid var(--main-color);
+}
+
+.sections-controls a i {
+  color: var(--main-color);
+  font-size: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.sections-controls a.active i {
+  display: block;
 }
 
 @media (max-width: 600px) {
@@ -53,6 +73,7 @@ body {
 }
 
 /* =====================  SOCIAL MEDIA SIDE  ===================== */
+
 .social__media__side {
   position: fixed;
   top: 50%;
@@ -74,6 +95,7 @@ body {
 }
 
 /* =====================  GO TO TOP BUTTON  ===================== */
+
 .go__to__top {
   text-decoration: none;
   position: fixed;
@@ -98,6 +120,7 @@ body {
 }
 
 /* =====================  POP UP WINDOW  ===================== */
+
 .pop__up__window {
   position: fixed;
   top: 0;
@@ -175,19 +198,16 @@ body {
     font-size: 25px;
     transition: 0.5s ease-in-out;
   }
-
   .pop__up-content {
     width: 100%;
     padding-left: 15px;
     padding-right: 15px;
   }
-
   .pop__up-content .pop__up-img img {
     max-width: initial;
     width: 100%;
     padding: 0 15px;
   }
-
   .pop__up__window .all-images img {
     width: 50px;
     height: 50px;
@@ -202,8 +222,24 @@ body {
 }
 
 /* =====================  HEADER  =====================*/
+header {
+  position: fixed;
+  z-index: 4;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--white);
+}
+
 .header__logo {
   width: 300px;
+  display: block;
+}
+
+@media (max-width: 740px) {
+  .header__logo {
+    margin-bottom: 20px;
+  }
 }
 
 .top__header ul li i {
@@ -222,7 +258,44 @@ body {
   position: relative;
 }
 
-.top__header .search-input,
+.top__header .search-input-content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 5;
+}
+
+.top__header .search-input-content .search-input {
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 992px) {
+  .top__header .search-input-content .search-input {
+    width: 80%;
+  }
+}
+
+.top__header .search-input-content .close-search {
+  position: absolute;
+  top: -40px;
+}
+
+.top__header .search-input-content .btn-main {
+  background-color: var(--main-color);
+  color: var(--white) !important;
+}
+
+.top__header .search-input-content .btn-main:hover {
+  background-color: var(--white);
+}
+
 .top__header .lang-content {
   position: absolute;
   left: 0;
@@ -328,7 +401,6 @@ body {
   .bottom__header .navbar-collapse {
     margin-top: 30px;
   }
-
   .bottom__header li:not(:last-child)::after {
     display: none;
     position: initial;
@@ -343,9 +415,15 @@ body {
 }
 
 /* =====================  BREADCRUMB  ===================== */
+
 nav.breadcrumb {
   background-color: var(--green);
   margin-bottom: 0;
+  position: fixed;
+  top: 142px;
+  width: 100%;
+  left: 0;
+  z-index: 3;
 }
 
 nav.breadcrumb a {
@@ -365,6 +443,7 @@ nav.breadcrumb i {
 }
 
 /* =====================  SLIDER  ===================== */
+
 .carousel-inner {
   max-height: 500px;
 }
@@ -463,7 +542,6 @@ nav.breadcrumb i {
     top: 200px;
     font-size: 14px;
   }
-
   .carousel-inner .slider-text::after {
     width: 3px;
   }
@@ -473,11 +551,9 @@ nav.breadcrumb i {
   .news-slider .slider-text {
     font-size: 10px;
   }
-
   .news-slider .slider-text::after {
     width: 2px;
   }
-
   .control-next-icon,
   .control-prev-icon {
     padding: 5px;
@@ -485,7 +561,6 @@ nav.breadcrumb i {
     align-items: center;
     justify-content: center;
   }
-
   .carousel-control-next-icon,
   .carousel-control-prev-icon {
     width: 1.3rem;
@@ -501,6 +576,7 @@ nav.breadcrumb i {
 }
 
 /* =====================  SUMMARY  ===================== */
+
 .summary {
   background-color: var(--light);
 }
@@ -619,6 +695,7 @@ nav.breadcrumb i {
 }
 
 /* =====================  APPS  ===================== */
+
 .apps-slider {
   height: 270px;
   padding: 20px 0;
@@ -688,6 +765,7 @@ nav.breadcrumb i {
 }
 
 /* =====================  MEDIA CENTER - news  ===================== */
+
 .gallery__items {
   overflow: hidden;
 }
@@ -726,7 +804,6 @@ nav.breadcrumb i {
     background-color: var(--green);
     color: var(--light);
   }
-
   .media__center-gallery .gallery__list li:hover::after {
     border-color: transparent transparent var(--light) transparent;
   }
@@ -736,7 +813,6 @@ nav.breadcrumb i {
   .media__center-gallery .gallery__list li {
     font-size: 12px;
   }
-
   .media__center-gallery .gallery__list li.active::after {
     border-width: 10px;
   }
@@ -752,11 +828,9 @@ nav.breadcrumb i {
   .media__center-gallery .gallery__list {
     flex-direction: column;
   }
-
   .media__center-gallery .gallery__list li {
     width: 100%;
   }
-
   .media__center-gallery .gallery__list li:not(:last-child) {
     border-bottom: 1px solid var(--light);
   }
@@ -834,6 +908,7 @@ nav.breadcrumb i {
 }
 
 /* =====================  MEDIA CENTER - events  ===================== */
+
 .media__center-gallery .events .card {
   height: 485px;
 }
@@ -844,6 +919,7 @@ nav.breadcrumb i {
 }
 
 /* =====================  MEDIA CENTER - hajj-magazine  ===================== */
+
 .media__center-gallery .hajj-magazine .animation-top-parent {
   max-height: 400px;
 }
@@ -871,6 +947,7 @@ nav.breadcrumb i {
 }
 
 /* =====================  MEDIA CENTER - media-library  ===================== */
+
 .media__center-gallery .media-library .animation-top-parent {
   height: 300px;
 }
@@ -926,9 +1003,11 @@ nav.breadcrumb i {
 }
 
 /* =====================  INITIATIVES  ===================== */
+
 .initiatives-slider .swiper-slide {
   height: 215px;
 }
+
 .initiatives-img {
   position: absolute;
   left: 0;
@@ -938,6 +1017,7 @@ nav.breadcrumb i {
 }
 
 /* =====================  PARTNERS  ===================== */
+
 .partners {
   margin-bottom: 250px;
 }
@@ -959,10 +1039,16 @@ nav.breadcrumb i {
 }
 
 /* ===================== INTERNAL PAGE ===>  MINISTRY VISION OPERATIONS  ===================== */
+
 .ministry__vision-operation {
   background-color: var(--green);
   border-top: 1px solid var(--light);
   padding: 10px 0;
+  position: fixed;
+  top: 182px;
+  width: 100%;
+  left: 0;
+  z-index: 3;
 }
 
 .ministry__vision-operation-content {
@@ -1042,6 +1128,7 @@ nav.breadcrumb i {
 }
 
 /* ===================== INTERNAL PAGE ===>  MINISTRY VISION  ===================== */
+
 .ministry__vision {
   padding: 100px 0;
 }
@@ -1155,6 +1242,7 @@ nav.breadcrumb i {
 }
 
 /* ===================== INTERNAL PAGE ===>  ELECTRONIC SERVICES DETAILS  ===================== */
+
 .business-individuals__services-list {
   font-weight: bold;
 }
@@ -1236,7 +1324,6 @@ nav.breadcrumb i {
     gap: 20px;
     width: 100%;
   }
-
   .business__services li {
     width: 100%;
     text-align: center;
@@ -1244,6 +1331,7 @@ nav.breadcrumb i {
 }
 
 /* ===================== INTERNAL PAGE ===>  APPS DETAILS  ===================== */
+
 .apps-details .app-img {
   width: 300px;
   height: 300px;
@@ -1265,7 +1353,6 @@ nav.breadcrumb i {
     width: 230px;
     height: 230px;
   }
-
   .apps-details .app-img img {
     width: 230px;
     height: 230px;
@@ -1303,6 +1390,7 @@ nav.breadcrumb i {
 }
 
 /* ===================== INTERNAL PAGE ===>  NEWS DETAILS  ===================== */
+
 .news-details img,
 .activities__events-details img {
   height: 100%;
@@ -1324,6 +1412,7 @@ nav.breadcrumb i {
 }
 
 /* ===================== INTERNAL PAGE ===> HAJ MAGAZINE DETAILS  ===================== */
+
 .haj__magazine-details .card,
 .media__library-details .card {
   height: 270px;
@@ -1336,6 +1425,7 @@ nav.breadcrumb i {
 }
 
 /* ===================== INTERNAL PAGE ===> AWARENEES CENTER SINGLE  ===================== */
+
 .awareness__center-single .post-date {
   display: flex;
   align-items: center;
@@ -1360,13 +1450,13 @@ nav.breadcrumb i {
   .awareness__center-single .post-date .day {
     font-size: 70px;
   }
-
   .awareness__center-single .post-date .date {
     font-size: 30px;
   }
 }
 
 /* ===================== INTERNAL PAGE ===> INITIATIVES DETAILS  ===================== */
+
 .initiatives-details .card-title {
   font-size: 18px;
   font-weight: bold;
@@ -1377,7 +1467,44 @@ nav.breadcrumb i {
   color: var(--dark-light);
 }
 
+/* ================== Guide Sections Page ================== */
+.departments-side {
+  max-width: 800px;
+}
+
+.departments-side a {
+  font-size: 18px;
+  padding: 5px 0;
+  display: block;
+  text-decoration: none;
+  color: var(--main-color);
+}
+
+.departments-side .departments ul li {
+  position: relative;
+}
+
+.departments-side .departments ul li::after {
+  position: absolute;
+  content: "";
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 2px;
+  background-color: var(--green);
+}
+
+.departments-side .departments ul li.open::after {
+  right: -20px;
+  top: 0;
+  transform: translateY(0);
+  width: 5px;
+  height: 100%;
+}
+
 /* =====================  FOOTER  ===================== */
+
 footer {
   background-color: var(--dark);
   color: var(--light);
@@ -1469,7 +1596,9 @@ footer a {
 }
 
 /* =====================  GLOBAL  ===================== */
+
 /*  PAGINATION  */
+
 .pagination .page-item:first-child .page-link {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
@@ -1498,7 +1627,9 @@ footer a {
   background-color: var(--main-color);
   border-color: var(--main-color);
 }
+
 /* MY TITLES */
+
 .section__title,
 .section__title-2 {
   color: var(--green);
@@ -1534,6 +1665,7 @@ footer a {
 }
 
 /* MY ANIMATIONS */
+
 .animation-top-parent {
   position: relative;
   overflow: hidden;
@@ -1601,6 +1733,7 @@ footer a {
 }
 
 /* MY BUTTONS */
+
 .btn-green {
   max-width: 120px;
   margin-right: 12px;
@@ -1632,4 +1765,12 @@ footer a {
 .form-control:focus {
   border-color: #d8a53f;
   box-shadow: 0 0 0 0.25rem rgb(216 165 63 / 20%);
+}
+
+.page-item.active .page-link {
+  z-index: 2;
+}
+
+html.color-blind-on {
+  filter: grayscale(1);
 }

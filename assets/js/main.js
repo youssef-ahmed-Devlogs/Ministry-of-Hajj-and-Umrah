@@ -1,12 +1,44 @@
 // =====================  HEADER  =====================
 const searchBtn = document.getElementById("search-btn");
-const searchInput = document.getElementById("search-input");
+const closeSearchBtn = document.querySelector(".close-search");
+const searchInputContent = document.getElementById("search-input-content");
 
 const langBtn = document.getElementById("lang-btn");
 const langContent = document.getElementById("lang-content");
 
-toggleEleByClick(searchBtn, searchInput, "d-none", [langContent]);
-toggleEleByClick(langBtn, langContent, "d-none", [searchInput]);
+const colorBlindMood = document.querySelector(".color-blind-mood");
+
+searchBtn.addEventListener("click", () => {
+  document.querySelector("body").style.overflow = "hidden";
+});
+
+closeSearchBtn.addEventListener("click", () => {
+  document.querySelector("body").style.overflow = "visible";
+  searchInputContent.classList.add("d-none");
+});
+
+toggleEleByClick(searchBtn, searchInputContent, "d-none", [langContent]);
+toggleEleByClick(langBtn, langContent, "d-none", [searchInputContent]);
+
+// Color Blind Mood
+let blindMode = localStorage.getItem("colorBlindMood")
+  ? JSON.parse(localStorage.getItem("colorBlindMood"))
+  : false;
+const system = document.querySelector("html");
+
+colorBlindMood.addEventListener("click", () => {
+  if (system.classList.contains("color-blind-on")) {
+    system.classList.remove("color-blind-on");
+    localStorage.setItem("colorBlindMood", false);
+  } else {
+    system.classList.add("color-blind-on");
+    localStorage.setItem("colorBlindMood", true);
+  }
+});
+
+if (blindMode === true) {
+  system.classList.add("color-blind-on");
+}
 
 function toggleEleByClick(button, toggleEle, clas, othersElements) {
   button.addEventListener("click", () => {

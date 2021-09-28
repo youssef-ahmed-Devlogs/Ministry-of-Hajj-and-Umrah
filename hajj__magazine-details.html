@@ -85,19 +85,23 @@
       </div>
     </div>
 
+    <div id="home" style="position: absolute; top: 0; left: 0; z-index: -2">
+      To Top
+    </div>
     <!-- =====================  HEADER  ===================== -->
-    <header id="home">
+    <header>
       <div class="container">
         <div class="top__header py-2">
           <div class="row align-items-center">
             <div class="col-md-6">
-              <div class="header__logo">
+              <a href="index.html" class="header__logo">
                 <img class="w-100" src="assets/images/main-logo.png" alt="" />
-              </div>
+              </a>
             </div>
             <div class="col-md-6">
               <ul
                 class="
+                  mb-0
                   list-unstyled
                   p-0
                   d-flex
@@ -105,8 +109,14 @@
                   justify-content-end
                 "
               >
+                <li class="color-blind-mood mx-3">
+                  <i class="fas fa-eye"></i>
+                </li>
+
                 <li>
-                  <i class="fas fa-network-wired"></i>
+                  <a href="app-guide.html">
+                    <i class="fas fa-network-wired"></i
+                  ></a>
                 </li>
 
                 <li class="language-sys mx-3">
@@ -173,17 +183,26 @@
 
                   <div
                     class="
-                      search-input
+                      search-input-content
                       d-none
                       animate__animated animate__fadeInDown
                     "
-                    id="search-input"
+                    id="search-input-content"
                   >
-                    <input
-                      class="form-control"
-                      type="text"
-                      placeholder="أبحث"
-                    />
+                    <form class="search-input d-flex align-items-center">
+                      <span class="close-search">
+                        <i class="fas fa-window-close text-danger"></i>
+                      </span>
+
+                      <input
+                        class="form-control"
+                        type="text"
+                        placeholder="أبحث"
+                      />
+                      <button type="sunmit" class="btn btn-main">
+                        <i class="fas fa-search"></i>
+                      </button>
+                    </form>
                   </div>
                 </li>
               </ul>
@@ -605,6 +624,51 @@
             </li>
           </ul>
         </nav>
+
+        <div class="ministry__vision__bottom my-5">
+          <div>
+            <i class="far fa-clock"></i>
+            <span> آخر تعديل 27 محرم 1443 </span>
+          </div>
+          <!-- for new version ! -->
+          <!-- <div class="d-flex align-items-center">
+            <span>تقييم المحتوى</span>
+
+            <div class="rating__bar">
+              <input type="radio" name="rating" />
+              <input type="radio" name="rating" />
+              <input type="radio" name="rating" />
+              <input type="radio" name="rating" />
+              <input type="radio" name="rating" />
+            </div>
+          </div> -->
+          <div class="d-flex align-items-center share__in">
+            <span class="ps-3"> شارك على</span>
+            <ul class="list-unstyled d-flex align-items-center p-0 m-0">
+              <li class="ms-2">
+                <a
+                  target="blank"
+                  href="https://www.youtube.com/channel/UCCm8-SFjGg7Fb13CQT1GFOg"
+                >
+                  <i class="fab fa-youtube"></i>
+                </a>
+              </li>
+              <li class="ms-2">
+                <a
+                  target="blank"
+                  href="https://twitter.com/share?text=وزارة الحج&url=http://127.0.0.1:5500/ministry-vision.html"
+                >
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </li>
+              <li>
+                <a href="mailto: " target="blank">
+                  <i class="far fa-envelope"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
 

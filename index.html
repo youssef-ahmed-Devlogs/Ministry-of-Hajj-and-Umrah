@@ -22,7 +22,8 @@
     <link rel="stylesheet" href="assets/plugins/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
   </head>
-  <body>
+
+  <body style="margin-top: 142px !important">
     <!-- =====================  SECTIONS CONTROLS  ===================== -->
     <ul
       class="
@@ -35,22 +36,34 @@
       "
     >
       <li>
-        <a href="#home" class="mb-3 active"></a>
+        <a href="#home" class="mb-3 active text-center">
+          <i class="fas fa-home"></i>
+        </a>
       </li>
       <li>
-        <a href="#electronic__services" class="mb-3"></a>
+        <a href="#electronic__services" class="mb-3">
+          <i class="fas fa-tv"></i>
+        </a>
       </li>
       <li>
-        <a href="#apps" class="mb-3"></a>
+        <a href="#apps" class="mb-3">
+          <i class="fas fa-mobile-alt"></i>
+        </a>
       </li>
       <li>
-        <a href="#media__center" class="mb-3"></a>
+        <a href="#media__center" class="mb-3">
+          <i class="fas fa-rss"></i>
+        </a>
       </li>
       <li>
-        <a href="#awareness__center" class="mb-3"></a>
+        <a href="#awareness__center" class="mb-3">
+          <i class="fas fa-life-ring"></i>
+        </a>
       </li>
       <li>
-        <a href="#initiatives" class="mb-3"></a>
+        <a href="#initiatives" class="mb-3">
+          <i class="fas fa-hands-helping"></i>
+        </a>
       </li>
     </ul>
 
@@ -96,19 +109,23 @@
       </div>
     </div>
 
+    <div id="home" style="position: absolute; top: 0; left: 0; z-index: -2">
+      To Top
+    </div>
     <!-- =====================  HEADER  ===================== -->
-    <header id="home">
+    <header>
       <div class="container">
         <div class="top__header py-2">
           <div class="row align-items-center">
             <div class="col-md-6">
-              <div class="header__logo">
+              <a href="index.html" class="header__logo">
                 <img class="w-100" src="assets/images/main-logo.png" alt="" />
-              </div>
+              </a>
             </div>
             <div class="col-md-6">
               <ul
                 class="
+                  mb-0
                   list-unstyled
                   p-0
                   d-flex
@@ -116,8 +133,14 @@
                   justify-content-end
                 "
               >
+                <li class="color-blind-mood mx-3">
+                  <i class="fas fa-eye"></i>
+                </li>
+
                 <li>
-                  <i class="fas fa-network-wired"></i>
+                  <a href="app-guide.html">
+                    <i class="fas fa-network-wired"></i
+                  ></a>
                 </li>
 
                 <li class="language-sys mx-3">
@@ -184,17 +207,26 @@
 
                   <div
                     class="
-                      search-input
+                      search-input-content
                       d-none
                       animate__animated animate__fadeInDown
                     "
-                    id="search-input"
+                    id="search-input-content"
                   >
-                    <input
-                      class="form-control"
-                      type="text"
-                      placeholder="أبحث"
-                    />
+                    <form class="search-input d-flex align-items-center">
+                      <span class="close-search">
+                        <i class="fas fa-window-close text-danger"></i>
+                      </span>
+
+                      <input
+                        class="form-control"
+                        type="text"
+                        placeholder="أبحث"
+                      />
+                      <button type="sunmit" class="btn btn-main">
+                        <i class="fas fa-search"></i>
+                      </button>
+                    </form>
                   </div>
                 </li>
               </ul>
