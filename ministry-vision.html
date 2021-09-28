@@ -40,6 +40,25 @@
           visibility: visible;
         }
       }
+
+      .main-categories > li > a,
+      .sub-categories > li > a {
+        background-color: var(--main-color);
+        color: var(--white);
+        display: block;
+        padding: 10px;
+        border-top: 1px solid var(--light);
+        transition: 0.4s ease-in-out;
+      }
+
+      .main-categories a:hover {
+        opacity: 0.8;
+      }
+
+      .sub-categories > li > a {
+        background-color: #ffcd68;
+        border-right: 10px solid var(--green);
+      }
     </style>
   </head>
   <body>
@@ -85,19 +104,23 @@
       </div>
     </div>
 
+    <div id="home" style="position: absolute; top: 0; left: 0; z-index: -2">
+      To Top
+    </div>
     <!-- =====================  HEADER  ===================== -->
-    <header id="home">
+    <header>
       <div class="container">
         <div class="top__header py-2">
           <div class="row align-items-center">
             <div class="col-md-6">
-              <div class="header__logo">
+              <a href="index.html" class="header__logo">
                 <img class="w-100" src="assets/images/main-logo.png" alt="" />
-              </div>
+              </a>
             </div>
             <div class="col-md-6">
               <ul
                 class="
+                  mb-0
                   list-unstyled
                   p-0
                   d-flex
@@ -105,8 +128,14 @@
                   justify-content-end
                 "
               >
+                <li class="color-blind-mood mx-3">
+                  <i class="fas fa-eye"></i>
+                </li>
+
                 <li>
-                  <i class="fas fa-network-wired"></i>
+                  <a href="app-guide.html">
+                    <i class="fas fa-network-wired"></i
+                  ></a>
                 </li>
 
                 <li class="language-sys mx-3">
@@ -173,17 +202,26 @@
 
                   <div
                     class="
-                      search-input
+                      search-input-content
                       d-none
                       animate__animated animate__fadeInDown
                     "
-                    id="search-input"
+                    id="search-input-content"
                   >
-                    <input
-                      class="form-control"
-                      type="text"
-                      placeholder="أبحث"
-                    />
+                    <form class="search-input d-flex align-items-center">
+                      <span class="close-search">
+                        <i class="fas fa-window-close text-danger"></i>
+                      </span>
+
+                      <input
+                        class="form-control"
+                        type="text"
+                        placeholder="أبحث"
+                      />
+                      <button type="sunmit" class="btn btn-main">
+                        <i class="fas fa-search"></i>
+                      </button>
+                    </form>
                   </div>
                 </li>
               </ul>
@@ -399,7 +437,50 @@
       <h2 class="section__title-2">رؤية و رسالة الوزارة</h2>
       <div class="container">
         <div class="row">
-          <div class="col-lg-4">TEST</div>
+          <div class="col-lg-4">
+            <div class="card p-3">
+              <ul class="list-unstyled p-0 main-categories">
+                <li>
+                  <a class="text-decoration-none" href="#">أقسام 1</a>
+
+                  <ul class="list-unstyled p-0 sub-categories">
+                    <li>
+                      <a class="text-decoration-none" href="#">فسم 1</a>
+                    </li>
+                    <li>
+                      <a class="text-decoration-none" href="#">فسم 2</a>
+                    </li>
+                    <li>
+                      <a class="text-decoration-none" href="#">فسم 3</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a class="text-decoration-none" href="#">أقسام 2</a>
+                </li>
+                <li>
+                  <a class="text-decoration-none" href="#">أقسام 3</a>
+                </li>
+                <li>
+                  <a class="text-decoration-none" href="#">أقسام 4</a>
+                  <ul class="list-unstyled p-0 sub-categories">
+                    <li>
+                      <a class="text-decoration-none" href="#">فسم 1</a>
+                    </li>
+                    <li>
+                      <a class="text-decoration-none" href="#">فسم 2</a>
+                    </li>
+                    <li>
+                      <a class="text-decoration-none" href="#">فسم 3</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a class="text-decoration-none" href="#">أقسام 5</a>
+                </li>
+              </ul>
+            </div>
+          </div>
           <div class="col-lg-8">
             <div class="ministry__vision__left-content">
               <div class="vmb-4">
@@ -452,17 +533,23 @@
             <span class="ps-3"> شارك على</span>
             <ul class="list-unstyled d-flex align-items-center p-0 m-0">
               <li class="ms-2">
-                <a href="#">
+                <a
+                  target="blank"
+                  href="https://www.youtube.com/channel/UCCm8-SFjGg7Fb13CQT1GFOg"
+                >
                   <i class="fab fa-youtube"></i>
                 </a>
               </li>
               <li class="ms-2">
-                <a href="#">
+                <a
+                  target="blank"
+                  href="https://twitter.com/share?text=وزارة الحج&url=http://127.0.0.1:5500/ministry-vision.html"
+                >
                   <i class="fab fa-twitter"></i>
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="mailto: " target="blank">
                   <i class="far fa-envelope"></i>
                 </a>
               </li>
@@ -485,8 +572,8 @@
           "
         >
           <li>
-            <a href="#">
-              <i class="fab fa-facebook-f"></i>
+            <a href="https://www.youtube.com/channel/UCCm8-SFjGg7Fb13CQT1GFOg">
+              <i class="fab fa-youtube"></i>
             </a>
           </li>
           <li>
@@ -495,8 +582,8 @@
             </a>
           </li>
           <li>
-            <a href="#">
-              <i class="fab fa-instagram"></i>
+            <a href="mailto:">
+              <i class="far fa-envelope"></i>
             </a>
           </li>
         </ul>
